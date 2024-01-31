@@ -78,26 +78,18 @@ for i in range(uniqueADM0Codes.size().toInt().getInfo()):
     country_name = country.get('ADM0_NAME').getInfo()
     if country_name not in country_names:
         continue
-
-    print(f"{country_name} - {adm0_code.getInfo()}")
     
     areaSquareKm = country.geometry().area().divide(1e6)
     areaString = str(areaSquareKm.round().getInfo())
     areaString = areaString[:-2]
     fileName = country.get('ADM0_NAME').getInfo().replace(' ', '') + '_' + areaString
     print(fileName)
-    
-    # Use bounds instead of the country's geometry
-    # region = ee.geometry.Geometry.MultiPolygon(country.geometry())
-    region = country.geometry().bounds()
-    # print(region)
-    layer = imageRGB.clip(region)
-    # layer = layer.mask(region)
     scaleForExport = areaSquareKm.divide(5).getInfo()
     scaleForExport = 1000 if scaleForExport > 1000 else scaleForExport
     
-    # layer = imageRGB.clipToBoundsAndScale(geometry=region, scale=scaleForExport)
-    # Get the download URL
+    region = country.geometry().bounds()
+    layer = imageRGB.clip(region)
+
     download_url = layer.getDownloadURL({
         'name': fileName,
         # 'image': layer,
@@ -117,14 +109,6 @@ for i in range(uniqueADM0Codes.size().toInt().getInfo()):
     with open(os.path.join(temp_directory, f'{fileName}.tiff'), 'wb') as f:
         print('here')
         f.write(response.content)
-
-    # Extract the contents of the zip file
-    # subprocess.run(['unzip', '-o', os.path.join(temp_directory, f'{fileName}.tiffs'), '-d', temp_directory])
-    
-    # # Use gdal_merge.py to combine multiple GeoTIFF files into one
-    # merged_tiff_path = os.path.join(temp_directory, f'{fileName.getInfo()}_merged.tif')
-    # subprocess.run(['gdal_merge.py', '-o', merged_tiff_path] +
-    #                [os.path.join(temp_directory, tiff_file) for tiff_file in os.listdir(temp_directory) if tiff_file.endswith('.tif')])
 
     # # Use gdal_translate to convert the merged GeoTIFF file to PNG
     # png_file_path = os.path.join(output_directory, f'{fileName.getInfo()}.png')
