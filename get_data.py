@@ -88,20 +88,22 @@ for i in range(uniqueADM0Codes.size().toInt().getInfo()):
     print(fileName)
     
     # Use bounds instead of the country's geometry
+    # region = ee.geometry.Geometry.MultiPolygon(country.geometry())
     region = country.geometry().bounds()
-    # region = country.geometry().bounds().transform('EPSG:4326', 1).bounds()
     # print(region)
     layer = imageRGB.clip(region)
+    # layer = layer.mask(region)
     scaleForExport = areaSquareKm.divide(5).getInfo()
     scaleForExport = 1000 if scaleForExport > 1000 else scaleForExport
     
     # layer = imageRGB.clipToBoundsAndScale(geometry=region, scale=scaleForExport)
-
     # Get the download URL
     download_url = layer.getDownloadURL({
         'name': fileName,
+        # 'image': layer,
         'scale': scaleForExport, 
-        'region': region.getInfo()  # Use getInfo() to convert the region to GeoJSON
+        # 'region': region.getInfo(), # Use getInfo() to convert the region to GeoJSON
+        'format': 'GEO_TIFF'
     })
 
     # Download the image and save to the temp directory
@@ -110,14 +112,14 @@ for i in range(uniqueADM0Codes.size().toInt().getInfo()):
     # Ensure the directory exists
     os.makedirs(temp_directory, exist_ok=True)
     os.makedirs(output_directory, exist_ok=True)
-    
     # Save the image to the temp directory
     
-    with open(os.path.join(temp_directory, f'{fileName}.zip'), 'wb') as f:
+    with open(os.path.join(temp_directory, f'{fileName}.tiff'), 'wb') as f:
+        print('here')
         f.write(response.content)
 
     # Extract the contents of the zip file
-    subprocess.run(['unzip', '-o', os.path.join(temp_directory, f'{fileName}.zip'), '-d', temp_directory])
+    # subprocess.run(['unzip', '-o', os.path.join(temp_directory, f'{fileName}.tiffs'), '-d', temp_directory])
     
     # # Use gdal_merge.py to combine multiple GeoTIFF files into one
     # merged_tiff_path = os.path.join(temp_directory, f'{fileName.getInfo()}_merged.tif')
