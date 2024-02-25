@@ -119,7 +119,7 @@ def load_DB():
 
     """
     For each image we have, use ADMO_Code (filename) to lookup and construct JSON:
-        { name : iran
+        [name : iran
         total area : alot
         ecoregion1 : 45%,
         ecoregion2 : 18%,
