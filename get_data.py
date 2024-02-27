@@ -152,8 +152,6 @@ def load_DB():
             bounds = country.geometry()
             country_ecoregions = ecoRegions.filterBounds(bounds)
             country_area = bounds.area().getInfo()
-
-            print(country_area)
             def calc_relative_area(feature):
                 overlap = ee.feature.Feature.intersection(feature, country)
                 area = overlap.area()
@@ -165,14 +163,14 @@ def load_DB():
             area_sum = 0
             for feature in cerra['features']:
                 if feature['properties']['BIOME_NAME'] in entry['eco_data']:
-                    entry['eco_data'][feature['properties']['BIOME_NAME']] += int(feature['properties']['Relative_Area'])
+                    entry['eco_data'][feature['properties']['BIOME_NAME']] += feature['properties']['Relative_Area']
                 else:
-                    entry['eco_data'][feature['properties']['BIOME_NAME']] = int(feature['properties']['Relative_Area'])
+                    entry['eco_data'][feature['properties']['BIOME_NAME']] = feature['properties']['Relative_Area']
                 area_sum += feature['properties']['Relative_Area']
-            entry['eco_data']['area_sum'] = int(area_sum)
+            entry['eco_data']['area_sum'] = area_sum
             entry['total_area'] = country_area
+            print(country.get('ADM0_NAME').getInfo())
             data.append({'country' : country.get('ADM0_NAME').getInfo(), 'data' : entry})
-            # print(data)
             
     return data
 
@@ -180,22 +178,16 @@ def add_to_DB(data):
         
     dynamodb = boto3.resource('dynamodb') 
     for item in data: 
-        print(json.dumps(item, indent='  '))
-        # json_obj = json.loads(item[1])
         table = dynamodb.Table('country')
         item = json.loads(json.dumps(item), parse_float=Decimal)
         response = table.put_item(Item = item)
-        # response = dynamodb.put_item( 
-        #     TableName = 'country', 
-        #     Item = { 
-        #     'pk': item[0], 
-        #     # 'name': {'S': item[0]}, 
-        #     'map': item[1]
-        #     } 
-        # ) 
-    print(response)
+        print(f"{item['country']} - {response}")
+
+def save_data(data):
+    with open('DB.json','w') as db:
+        db.write(json.dumps(data, indent='  '))
 
 
 data = load_DB()
-print(json.dumps(data, indent='  '))
-add_to_DB(data)
+# print(json.dumps(data, indent='  '))
+# add_to_DB(data)
