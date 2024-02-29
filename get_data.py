@@ -7,9 +7,47 @@ from pathlib import Path
 import boto3
 import json
 
+def get_colors():
+    ee.Initialize()
+
+    # Load the GAUL (Global Administrative Unit Layers) dataset
+    ecoRegions = ee.FeatureCollection('RESOLVE/ECOREGIONS/2017')
+
+    colorUpdates = [
+        {'ECO_ID': 204, 'COLOR': '#B3493B'},
+        {'ECO_ID': 245, 'COLOR': '#267400'},
+        {'ECO_ID': 259, 'COLOR': '#004600'},
+        {'ECO_ID': 286, 'COLOR': '#82F178'},
+        {'ECO_ID': 316, 'COLOR': '#E600AA'},
+        {'ECO_ID': 453, 'COLOR': '#5AA500'},
+        {'ECO_ID': 317, 'COLOR': '#FDA87F'},
+        {'ECO_ID': 763, 'COLOR': '#A93800'},
+    ]
+
+    ecoRegions = ecoRegions.map(lambda f: f.set({'style': {'color': f.get('COLOR'), 'width': 0}}))
+
+    for update in colorUpdates:
+        layer = ecoRegions.filterMetadata('ECO_ID', 'equals', update['ECO_ID']) \
+            .map(lambda f: f.set({'style': {'color': update['COLOR'], 'width': 0}}))
+
+        ecoRegions = ecoRegions.filterMetadata('ECO_ID', 'not_equals', update['ECO_ID']).merge(layer)
+
+
+
+
+    colors = {}
+    biomes = ['Deserts & Xeric Shrublands', 'N/A', 'Tropical & Subtropical Moist Broadleaf Forests', 'Mediterranean Forests, Woodlands & Scrub', 'Temperate Broadleaf & Mixed Forests', 'Tropical & Subtropical Coniferous Forests', 'Temperate Conifer Forests', 'Boreal Forests/Taiga', 'Flooded Grasslands & Savannas', 'Temperate Grasslands, Savannas & Shrublands', 'Montane Grasslands & Shrublands', 'Tropical & Subtropical Dry Broadleaf Forests', 'Tropical & Subtropical Grasslands, Savannas & Shrublands', 'Mangroves', 'Tundra']
+    for biome in biomes:
+        targetFeatures = ecoRegions.filter(ee.Filter.eq('BIOME_NAME', biome))
+        targetFeature = ee.Feature(targetFeatures.first())
+        color = targetFeature.get('COLOR')
+        colors[biome] = color.getInfo()
+    
+    print(colors)
+
 def get_images():
     # list of country names we care about
-    country_names = ['Andorra', 'United Arab Emirates', 'Afghanistan', 'Antigua and Barbuda', 'Anguilla', 'Albania', 'Armenia', 'Angola', 'Antarctica', 'Argentina', 'American Samoa', 'Austria', 'Australia', 'Aruba', 'Åland Islands', 'Azerbaijan', 'Bosnia and Herzegovina', 'Barbados', 'Bangladesh', 'Belgium', 'Burkina Faso', 'Bulgaria', 'Bahrain', 'Burundi', 'Benin', 'Saint Barthélemy', 'Bermuda', 'Brunei Darussalam', 'Bolivia, Plurinational State of', 'Bonaire, Sint Eustatius and Saba', 'Brazil', 'Bahamas', 'Bhutan', 'Bouvet Island', 'Botswana', 'Belarus', 'Belize', 'Canada', 'Cocos (Keeling) Islands', 'Congo, Democratic Republic of the', 'Central African Republic', 'Congo', 'Switzerland', 'Côte d\'Ivoire', 'Cook Islands', 'Chile', 'Cameroon', 'China', 'Colombia', 'Costa Rica', 'Cuba', 'Cabo Verde', 'Curaçao', 'Christmas Island', 'Cyprus', 'Czechia', 'Germany', 'Djibouti', 'Denmark', 'Dominica', 'Dominican Republic', 'Algeria', 'Ecuador', 'Estonia', 'Egypt', 'Western Sahara', 'Eritrea', 'Spain', 'Ethiopia', 'Finland', 'Fiji', 'Falkland Islands (Malvinas)', 'Micronesia, Federated States of', 'Faroe Islands', 'France', 'Gabon', 'United Kingdom of Great Britain and Northern Ireland', 'Grenada', 'Georgia', 'French Guiana', 'Guernsey', 'Ghana', 'Gibraltar', 'Greenland', 'Gambia', 'Guinea', 'Guadeloupe', 'Equatorial Guinea', 'Greece', 'South Georgia and the South Sandwich Islands', 'Guatemala', 'Guam', 'Guinea-Bissau', 'Guyana', 'Hong Kong', 'Heard Island and McDonald Islands', 'Honduras', 'Croatia', 'Haiti', 'Hungary', 'Indonesia', 'Ireland', 'Israel', 'Isle of Man', 'India', 'British Indian Ocean Territory', 'Iraq', 'Iran, Islamic Republic of', 'Iceland', 'Italy', 'Jersey', 'Jamaica', 'Jordan', 'Japan', 'Kenya', 'Kyrgyzstan', 'Cambodia', 'Kiribati', 'Comoros', 'Saint Kitts and Nevis', 'Korea, Democratic People\'s Republic of', 'Korea, Republic of', 'Kuwait', 'Cayman Islands', 'Kazakhstan', 'Lao People\'s Democratic Republic', 'Lebanon', 'Saint Lucia', 'Liechtenstein', 'Sri Lanka', 'Liberia', 'Lesotho', 'Lithuania', 'Luxembourg', 'Latvia', 'Libya', 'Morocco', 'Monaco', 'Moldova, Republic of', 'Montenegro', 'Saint Martin, (French part)', 'Madagascar', 'Marshall Islands', 'North Macedonia', 'Mali', 'Myanmar', 'Mongolia', 'Macao', 'Northern Mariana Islands', 'Martinique', 'Mauritania', 'Montserrat', 'Malta', 'Mauritius', 'Maldives', 'Malawi', 'Mexico', 'Malaysia', 'Mozambique', 'Namibia', 'New Caledonia', 'Niger', 'Norfolk Island', 'Nigeria', 'Nicaragua', 'Netherlands', 'Norway', 'Nepal', 'Nauru', 'Niue', 'New Zealand', 'Oman', 'Panama', 'Peru', 'French Polynesia', 'Papua New Guinea', 'Philippines', 'Pakistan', 'Poland', 'Saint Pierre and Miquelon', 'Pitcairn', 'Puerto Rico', 'Palestine, State of', 'Portugal', 'Palau', 'Paraguay', 'Qatar', 'Réunion', 'Romania', 'Serbia', 'Russian Federation', 'Rwanda', 'Saudi Arabia', 'Solomon Islands', 'Seychelles', 'Sudan', 'Sweden', 'Singapore', 'Saint Helena, Ascension and Tristan da Cunha', 'Slovenia', 'Svalbard and Jan Mayen', 'Slovakia', 'Sierra Leone', 'San Marino', 'Senegal', 'Somalia', 'Suriname', 'South Sudan', 'Sao Tome and Principe', 'El Salvador', 'Sint Maarten, (Dutch part)', 'Syrian Arab Republic', 'Eswatini', 'Turks and Caicos Islands', 'Chad', 'French Southern Territories', 'Togo', 'Thailand', 'Tajikistan', 'Tokelau', 'Timor-Leste', 'Turkmenistan', 'Tunisia', 'Tonga', 'Türkiye', 'Trinidad and Tobago', 'Tuvalu', 'Taiwan, Province of China', 'Tanzania, United Republic of', 'Ukraine', 'Uganda', 'United States Minor Outlying Islands', 'United States of America', 'Uruguay', 'Uzbekistan', 'Holy See', 'Saint Vincent and the Grenadines', 'Venezuela, Bolivarian Republic of', 'Virgin Islands, British', 'Virgin Islands, U.S.', 'Viet Nam', 'Vanuatu', 'Wallis and Futuna', 'Samoa', 'Yemen', 'Mayotte', 'South Africa', 'Zambia', 'Zimbabwe']
+    country_names = ['Andorra', 'United Arab Emirates', 'Afghanistan', 'Antigua and Barbuda', 'Anguilla', 'Albania', 'Armenia', 'Angola', 'Antarctica', 'Argentina', 'American Samoa', 'Austria', 'Australia', 'Aruba', 'Åland Islands', 'Azerbaijan', 'Bosnia and Herzegovina', 'Barbados', 'Bangladesh', 'Belgium', 'Burkina Faso', 'Bulgaria', 'Bahrain', 'Burundi', 'Benin', 'Saint Barthélemy', 'Bermuda', 'Brunei Darussalam', 'Bolivia, Plurinational State of', 'Bonaire, Sint Eustatius and Saba', 'Brazil', 'Bahamas', 'Bhutan', 'Bouvet Island', 'Botswana', 'Belarus', 'Belize', 'Canada', 'Cocos (Keeling) Islands', 'Congo, Democratic Republic of the', 'Central African Republic', 'Congo', 'Switzerland', 'Côte d\'Ivoire', 'Cook Islands', 'Chile', 'Cameroon', 'China', 'Colombia', 'Costa Rica', 'Cuba', 'Cabo Verde', 'Curaçao', 'Christmas Island', 'Cyprus', 'Czechia', 'Germany', 'Djibouti', 'Denmark', 'Dominica', 'Dominican Republic', 'Algeria', 'Ecuador', 'Estonia', 'Egypt', 'Western Sahara', 'Eritrea', 'Spain', 'Ethiopia', 'Finland', 'Fiji', 'Falkland Islands (Malvinas)', 'Micronesia, Federated States of', 'Faroe Islands', 'France', 'Gabon', 'United Kingdom of Great Britain and Northern Ireland', 'Grenada', 'Georgia', 'French Guiana', 'Guernsey', 'Ghana', 'Gibraltar', 'Greenland', 'Gambia', 'Guinea', 'Guadeloupe', 'Equatorial Guinea', 'Greece', 'South Georgia and the South Sandwich Islands', 'Guatemala', 'Guam', 'Guinea-Bissau', 'Guyana', 'Hong Kong', 'Heard Island and McDonald Islands', 'Honduras', 'Croatia', 'Haiti', 'Hungary', 'Indonesia', 'Ireland', 'Israel', 'Isle of Man', 'India', 'British Indian Ocean Territory', 'Iraq', 'Iran, Islamic Republic of', 'Iceland', 'Italy', 'Jersey', 'Jamaica', 'Jordan', 'Japan', 'Kenya', 'Kyrgyzstan', 'Cambodia', 'Kiribati', 'Comoros', 'Saint Kitts and Nevis', 'Korea, Democratic People\'s Republic of', 'Korea, Republic of', 'Kuwait', 'Cayman Islands', 'Kazakhstan', 'Lao People\'s Democratic Republic', 'Lebanon', 'Saint Lucia', 'Liechtenstein', 'Sri Lanka', 'Liberia', 'Lesotho', 'Lithuania', 'Luxembourg', 'Latvia', 'Libya', 'Morocco', 'Monaco', 'Moldova, Republic of', 'Montenegro', 'Saint Martin, (French part)', 'Madagascar', 'Marshall Islands', 'North Macedonia', 'Mali', 'Myanmar', 'Mongolia', 'Macao', 'Northern Mariana Islands', 'Martinique', 'Mauritania', 'Montserrat', 'Malta', 'Mauritius', 'Maldives', 'Malawi', 'Mexico', 'Malaysia', 'Mozambique', 'Namibia', 'New Caledonia', 'Niger', 'Norfolk Island', 'Nigeria', 'Nicaragua', 'Netherlands', 'Norway', 'Nepal', 'Nauru', 'Niue', 'New Zealand', 'Oman', 'Panama', 'Peru', 'French Polynesia', 'Papua New Guinea', 'Philippines', 'Pakistan', 'Poland', 'Saint Pierre and Miquelon', 'Pitcairn', 'Puerto Rico', 'Palestine, State of', 'Portugal', 'Palau', 'Paraguay', 'Qatar', 'Réunion', 'Romania', 'Serbia', 'Russia', 'Rwanda', 'Saudi Arabia', 'Solomon Islands', 'Seychelles', 'Sudan', 'Sweden', 'Singapore', 'Saint Helena, Ascension and Tristan da Cunha', 'Slovenia', 'Svalbard and Jan Mayen', 'Slovakia', 'Sierra Leone', 'San Marino', 'Senegal', 'Somalia', 'Suriname', 'South Sudan', 'Sao Tome and Principe', 'El Salvador', 'Sint Maarten, (Dutch part)', 'Syrian Arab Republic', 'Eswatini', 'Turks and Caicos Islands', 'Chad', 'French Southern Territories', 'Togo', 'Thailand', 'Tajikistan', 'Tokelau', 'Timor-Leste', 'Turkmenistan', 'Tunisia', 'Tonga', 'Türkiye', 'Trinidad and Tobago', 'Tuvalu', 'Taiwan, Province of China', 'Tanzania, United Republic of', 'Ukraine', 'Uganda', 'United States Minor Outlying Islands', 'United States of America', 'Uruguay', 'Uzbekistan', 'Holy See', 'Saint Vincent and the Grenadines', 'Venezuela, Bolivarian Republic of', 'Virgin Islands, British', 'Virgin Islands, U.S.', 'Viet Nam', 'Vanuatu', 'Wallis and Futuna', 'Samoa', 'Yemen', 'Mayotte', 'South Africa', 'Zambia', 'Zimbabwe']
     country_names = set(country_names)
 
     # Authenticate to the Earth Engine servers
@@ -117,7 +155,7 @@ def get_images():
         to_drive(image, fileName, region, scale)
 
 
-def load_DB():
+def create_country_data(to_skip):
 
     """
     For each image we have, use ADMO_Code (filename) to lookup and construct JSON:
@@ -130,9 +168,6 @@ def load_DB():
             'total_area': 150535189.52041718}}
         ....
     """
-
-    data = []
-
     # Authenticate to the Earth Engine servers
     ee.Initialize()
 
@@ -141,13 +176,19 @@ def load_DB():
     countries = countries.distinct('ADM0_CODE')
 
     img_path = Path('img_png')
-    for file_path in img_path.iterdir():
+    
+    paths = [path for path in img_path.iterdir()]
+    for file_path in reversed(paths):
         if file_path.is_file() and file_path.suffix.lower() == ".png":
+            
             entry = {'eco_data':{}}
             adm0_code = int(file_path.stem)
             country = countries.filter(ee.Filter.eq('ADM0_CODE', adm0_code)).first()
+            country_name = country.get('ADM0_NAME').getInfo().lower()
+            print(country_name)
+            if country_name in to_skip:
+                continue
             entry['adm0_code'] = adm0_code
-
 
             bounds = country.geometry()
             country_ecoregions = ecoRegions.filterBounds(bounds)
@@ -167,27 +208,44 @@ def load_DB():
                 else:
                     entry['eco_data'][feature['properties']['BIOME_NAME']] = feature['properties']['Relative_Area']
                 area_sum += feature['properties']['Relative_Area']
-            entry['eco_data']['area_sum'] = area_sum
+            # entry['eco_data']['area_sum'] = area_sum
+            for eco_area in entry['eco_data'].keys():
+                entry['eco_data'][eco_area] = entry['eco_data'][eco_area] / area_sum 
             entry['total_area'] = country_area
-            print(country.get('ADM0_NAME').getInfo())
-            data.append({'country' : country.get('ADM0_NAME').getInfo().lower(), 'data' : entry})
+            print(country_name)
+            save_data(country_name, {'country' : country_name, 'data' : entry})
             
-    return data
 
-def add_to_DB(data):
-        
+def save_data(name, data):
+    with open(f'country_json/{name}.json','w') as country_file:
+        country_file.write(json.dumps(data, indent='  '))
+
+def load_db_from_files():
     dynamodb = boto3.resource('dynamodb') 
-    for item in data: 
-        table = dynamodb.Table('country')
-        item = json.loads(json.dumps(item), parse_float=Decimal)
-        response = table.put_item(Item = item)
-        print(f"{item['country']} - {response}")
+    json_path = Path('country_json')
+    for file_path in json_path.iterdir():
+        if file_path.is_file() and file_path.suffix.lower() == ".json":
+            with open(file_path) as country_data:
+                d = json.load(country_data)
+                add_to_DB(dynamodb, d)
+            
+def add_to_DB(db, data):
+    table = db.Table('country')
+    item = json.loads(json.dumps(data), parse_float=Decimal)
+    response = table.put_item(Item = item)
+    print(f"{item['country']} - {response}")
 
-def save_data(data):
-    with open('DB.json','w') as db:
-        db.write(json.dumps(data, indent='  '))
+
+to_skip = set()
+json_path = Path('country_json')
+for file_path in json_path.iterdir():
+    to_skip.add(file_path.stem)
 
 
-data = load_DB()
-save_data(data)
-add_to_DB(data)
+get_colors()
+# create_country_data(to_skip)
+# load_db_from_files()
+
+# TODO
+# replace N/A with Rock and Ice
+# remove data from json structure
