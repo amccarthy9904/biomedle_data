@@ -10,7 +10,6 @@ import json
 def get_colors():
     ee.Initialize()
 
-    # Load the GAUL (Global Administrative Unit Layers) dataset
     ecoRegions = ee.FeatureCollection('RESOLVE/ECOREGIONS/2017')
 
     colorUpdates = [
@@ -31,9 +30,6 @@ def get_colors():
             .map(lambda f: f.set({'style': {'color': update['COLOR'], 'width': 0}}))
 
         ecoRegions = ecoRegions.filterMetadata('ECO_ID', 'not_equals', update['ECO_ID']).merge(layer)
-
-
-
 
     colors = {}
     biomes = ['Deserts & Xeric Shrublands', 'N/A', 'Tropical & Subtropical Moist Broadleaf Forests', 'Mediterranean Forests, Woodlands & Scrub', 'Temperate Broadleaf & Mixed Forests', 'Tropical & Subtropical Coniferous Forests', 'Temperate Conifer Forests', 'Boreal Forests/Taiga', 'Flooded Grasslands & Savannas', 'Temperate Grasslands, Savannas & Shrublands', 'Montane Grasslands & Shrublands', 'Tropical & Subtropical Dry Broadleaf Forests', 'Tropical & Subtropical Grasslands, Savannas & Shrublands', 'Mangroves', 'Tundra']
@@ -168,7 +164,7 @@ def create_country_data(to_skip):
             'total_area': 150535189.52041718}}
         ....
     """
-    # Authenticate to the Earth Engine servers
+    
     ee.Initialize()
 
     countries = ee.FeatureCollection('FAO/GAUL/2015/level0')
@@ -178,17 +174,18 @@ def create_country_data(to_skip):
     img_path = Path('img_png')
     
     paths = [path for path in img_path.iterdir()]
-    for file_path in reversed(paths):
+    for file_path in paths:
+    # for file_path in reversed(paths):
         if file_path.is_file() and file_path.suffix.lower() == ".png":
             
-            entry = {'eco_data':{}}
             adm0_code = int(file_path.stem)
             country = countries.filter(ee.Filter.eq('ADM0_CODE', adm0_code)).first()
             country_name = country.get('ADM0_NAME').getInfo().lower()
             print(country_name)
             if country_name in to_skip:
                 continue
-            entry['adm0_code'] = adm0_code
+
+            entry = {'country': country_name, 'eco_data': {}}
 
             bounds = country.geometry()
             country_ecoregions = ecoRegions.filterBounds(bounds)
@@ -208,12 +205,19 @@ def create_country_data(to_skip):
                 else:
                     entry['eco_data'][feature['properties']['BIOME_NAME']] = feature['properties']['Relative_Area']
                 area_sum += feature['properties']['Relative_Area']
-            # entry['eco_data']['area_sum'] = area_sum
+
+            # make sure all areas add to 1 and 
             for eco_area in entry['eco_data'].keys():
                 entry['eco_data'][eco_area] = entry['eco_data'][eco_area] / area_sum 
+            
+            # replace N/A with Rocks and Ice
+            if 'N/A' in entry['eco_data']:
+                entry['eco_data']['Rocks and Ice'] = entry['N/A'][eco_area]
+                del entry['eco_data'][eco_area]
+
             entry['total_area'] = country_area
             print(country_name)
-            save_data(country_name, {'country' : country_name, 'data' : entry})
+            save_data(country_name, entry)
             
 
 def save_data(name, data):
@@ -242,10 +246,6 @@ for file_path in json_path.iterdir():
     to_skip.add(file_path.stem)
 
 
-get_colors()
-# create_country_data(to_skip)
-# load_db_from_files()
-
-# TODO
-# replace N/A with Rock and Ice
-# remove data from json structure
+# get_colors()
+create_country_data(to_skip)
+load_db_from_files()
