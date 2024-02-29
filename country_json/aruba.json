@@ -1,0 +1,11 @@
+{
+  "country": "aruba",
+  "data": {
+    "eco_data": {
+      "Deserts & Xeric Shrublands": 0.14048960690105117,
+      "Mangroves": 0.8595103930989488
+    },
+    "adm0_code": 14,
+    "total_area": 180455133.49860677
+  }
+}

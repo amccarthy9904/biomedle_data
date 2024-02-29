@@ -1,0 +1,13 @@
+{
+  "country": "el salvador",
+  "data": {
+    "eco_data": {
+      "Tropical & Subtropical Dry Broadleaf Forests": 0.39710419841509076,
+      "Tropical & Subtropical Coniferous Forests": 0.5173710688568388,
+      "Mangroves": 0.03625179003070119,
+      "Tropical & Subtropical Moist Broadleaf Forests": 0.04927294269736926
+    },
+    "adm0_code": 75,
+    "total_area": 20809319665.997715
+  }
+}

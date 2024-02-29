@@ -1,0 +1,14 @@
+{
+  "country": "zimbabwe",
+  "data": {
+    "eco_data": {
+      "Deserts & Xeric Shrublands": 0.0022106218536054436,
+      "Flooded Grasslands & Savannas": 4.722007148017623e-06,
+      "Montane Grasslands & Shrublands": 0.01857882382044381,
+      "Tropical & Subtropical Moist Broadleaf Forests": 0.0020365836255466043,
+      "Tropical & Subtropical Grasslands, Savannas & Shrublands": 0.9771692486932559
+    },
+    "adm0_code": 271,
+    "total_area": 391843308025.4385
+  }
+}

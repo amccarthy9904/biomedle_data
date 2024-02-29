@@ -1,0 +1,15 @@
+{
+  "country": "colombia",
+  "data": {
+    "eco_data": {
+      "Tropical & Subtropical Dry Broadleaf Forests": 0.06901556970546902,
+      "Tropical & Subtropical Grasslands, Savannas & Shrublands": 0.1343439758727662,
+      "Montane Grasslands & Shrublands": 0.013604438580387313,
+      "Deserts & Xeric Shrublands": 0.024242080860111453,
+      "Mangroves": 0.0076304787489823835,
+      "Tropical & Subtropical Moist Broadleaf Forests": 0.7511634562322838
+    },
+    "adm0_code": 57,
+    "total_area": 1142927981604.195
+  }
+}

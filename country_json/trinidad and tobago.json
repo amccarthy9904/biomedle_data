@@ -1,0 +1,12 @@
+{
+  "country": "trinidad and tobago",
+  "data": {
+    "eco_data": {
+      "Tropical & Subtropical Dry Broadleaf Forests": 0.04937178274079072,
+      "Mangroves": 0.03432048911769154,
+      "Tropical & Subtropical Moist Broadleaf Forests": 0.9163077281415177
+    },
+    "adm0_code": 246,
+    "total_area": 5164456734.6587305
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "country": "afghanistan",
+  "data": {
+    "eco_data": {
+      "N/A": 0.0010738120666503208,
+      "Temperate Conifer Forests": 0.02021362781163006,
+      "Temperate Grasslands, Savannas & Shrublands": 0.005672796900360978,
+      "Montane Grasslands & Shrublands": 0.17143023948382488,
+      "Deserts & Xeric Shrublands": 0.8016095237375337
+    },
+    "adm0_code": 1,
+    "total_area": 642049479006.6099
+  }
+}

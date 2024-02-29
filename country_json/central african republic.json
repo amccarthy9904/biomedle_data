@@ -1,0 +1,11 @@
+{
+  "country": "central african republic",
+  "data": {
+    "eco_data": {
+      "Tropical & Subtropical Moist Broadleaf Forests": 0.10437034042719541,
+      "Tropical & Subtropical Grasslands, Savannas & Shrublands": 0.8956296595728046
+    },
+    "adm0_code": 49,
+    "total_area": 622257298499.2479
+  }
+}

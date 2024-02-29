@@ -1,0 +1,13 @@
+{
+  "country": "oman",
+  "data": {
+    "eco_data": {
+      "Tropical & Subtropical Grasslands, Savannas & Shrublands": 0.01635584834654591,
+      "Temperate Grasslands, Savannas & Shrublands": 0.14611488659179173,
+      "Deserts & Xeric Shrublands": 0.8375253494377931,
+      "Mangroves": 3.915623869261982e-06
+    },
+    "adm0_code": 187,
+    "total_area": 309200168922.44543
+  }
+}

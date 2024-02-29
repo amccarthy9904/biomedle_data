@@ -1,0 +1,16 @@
+{
+  "country": "mexico",
+  "data": {
+    "eco_data": {
+      "Tropical & Subtropical Dry Broadleaf Forests": 0.19054765682851083,
+      "Tropical & Subtropical Coniferous Forests": 0.23684333168330873,
+      "Tropical & Subtropical Grasslands, Savannas & Shrublands": 0.007802222421853606,
+      "Mediterranean Forests, Woodlands & Scrub": 0.008070668844164592,
+      "Deserts & Xeric Shrublands": 0.40811208722182735,
+      "Mangroves": 0.010572425151254226,
+      "Tropical & Subtropical Moist Broadleaf Forests": 0.13805160784908058
+    },
+    "adm0_code": 162,
+    "total_area": 1953899543416.7502
+  }
+}

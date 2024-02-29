@@ -1,0 +1,12 @@
+{
+  "country": "thailand",
+  "data": {
+    "eco_data": {
+      "Mangroves": 0.0228562154038593,
+      "Tropical & Subtropical Dry Broadleaf Forests": 0.4406451290366272,
+      "Tropical & Subtropical Moist Broadleaf Forests": 0.5364986555595134
+    },
+    "adm0_code": 240,
+    "total_area": 517242230140.1396
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "country": "germany",
+  "data": {
+    "eco_data": {
+      "Temperate Broadleaf & Mixed Forests": 0.9906087101938352,
+      "Temperate Conifer Forests": 0.009391289806164793
+    },
+    "adm0_code": 93,
+    "total_area": 355933586348.41656
+  }
+}

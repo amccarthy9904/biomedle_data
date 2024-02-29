@@ -1,0 +1,11 @@
+{
+  "country": "bahamas",
+  "data": {
+    "eco_data": {
+      "Tropical & Subtropical Coniferous Forests": 0.5248950795569617,
+      "Mangroves": 0.4751049204430383
+    },
+    "adm0_code": 20,
+    "total_area": 11930182194.300869
+  }
+}

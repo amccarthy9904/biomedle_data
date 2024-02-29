@@ -1,0 +1,15 @@
+{
+  "country": "cuba",
+  "data": {
+    "eco_data": {
+      "Tropical & Subtropical Dry Broadleaf Forests": 0.6017679534196161,
+      "Tropical & Subtropical Coniferous Forests": 0.05863062587376604,
+      "Flooded Grasslands & Savannas": 0.051946056246328476,
+      "Deserts & Xeric Shrublands": 0.02849061427319128,
+      "Mangroves": 0.06379011488409662,
+      "Tropical & Subtropical Moist Broadleaf Forests": 0.1953746353030015
+    },
+    "adm0_code": 63,
+    "total_area": 111158531513.77998
+  }
+}

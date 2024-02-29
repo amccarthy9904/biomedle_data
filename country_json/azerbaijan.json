@@ -1,0 +1,12 @@
+{
+  "country": "azerbaijan",
+  "data": {
+    "eco_data": {
+      "Temperate Broadleaf & Mixed Forests": 0.34518845858242986,
+      "Temperate Grasslands, Savannas & Shrublands": 0.05986714339883227,
+      "Deserts & Xeric Shrublands": 0.5949443980187379
+    },
+    "adm0_code": 19,
+    "total_area": 164584912222.8552
+  }
+}

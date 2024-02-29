@@ -1,0 +1,14 @@
+{
+  "country": "kyrgyzstan",
+  "data": {
+    "eco_data": {
+      "N/A": 0.0021335190314043305,
+      "Temperate Conifer Forests": 0.05152016886401037,
+      "Temperate Grasslands, Savannas & Shrublands": 0.5040619961264655,
+      "Montane Grasslands & Shrublands": 0.422338614366488,
+      "Deserts & Xeric Shrublands": 0.01994570161163163
+    },
+    "adm0_code": 138,
+    "total_area": 198910313440.40494
+  }
+}

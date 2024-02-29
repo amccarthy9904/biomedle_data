@@ -1,0 +1,11 @@
+{
+  "country": "bahrain",
+  "data": {
+    "eco_data": {
+      "Deserts & Xeric Shrublands": 0.9992836408918357,
+      "Mangroves": 0.0007163591081642526
+    },
+    "adm0_code": 21,
+    "total_area": 674588555.8466554
+  }
+}

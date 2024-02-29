@@ -1,0 +1,13 @@
+{
+  "country": "tunisia",
+  "data": {
+    "eco_data": {
+      "Temperate Conifer Forests": 0.01703494294477617,
+      "Deserts & Xeric Shrublands": 0.4050116772613214,
+      "Flooded Grasslands & Savannas": 0.0690799339014476,
+      "Mediterranean Forests, Woodlands & Scrub": 0.5088734458924549
+    },
+    "adm0_code": 248,
+    "total_area": 155212220691.54132
+  }
+}

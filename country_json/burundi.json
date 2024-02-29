@@ -1,0 +1,12 @@
+{
+  "country": "burundi",
+  "data": {
+    "eco_data": {
+      "Flooded Grasslands & Savannas": 6.44557093498389e-05,
+      "Tropical & Subtropical Moist Broadleaf Forests": 0.5448871111407593,
+      "Tropical & Subtropical Grasslands, Savannas & Shrublands": 0.45504843314989085
+    },
+    "adm0_code": 43,
+    "total_area": 26976455489.813583
+  }
+}

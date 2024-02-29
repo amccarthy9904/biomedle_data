@@ -1,0 +1,12 @@
+{
+  "country": "suriname",
+  "data": {
+    "eco_data": {
+      "Tropical & Subtropical Grasslands, Savannas & Shrublands": 0.003740383741097124,
+      "Mangroves": 0.02842865399522126,
+      "Tropical & Subtropical Moist Broadleaf Forests": 0.9678309622636816
+    },
+    "adm0_code": 233,
+    "total_area": 145741038065.74786
+  }
+}

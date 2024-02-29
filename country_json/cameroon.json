@@ -1,0 +1,13 @@
+{
+  "country": "cameroon",
+  "data": {
+    "eco_data": {
+      "Mangroves": 0.005458147350334953,
+      "Flooded Grasslands & Savannas": 0.00943882087006493,
+      "Tropical & Subtropical Moist Broadleaf Forests": 0.5218261334577919,
+      "Tropical & Subtropical Grasslands, Savannas & Shrublands": 0.46327689832180824
+    },
+    "adm0_code": 45,
+    "total_area": 467380278274.06805
+  }
+}

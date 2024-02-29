@@ -1,0 +1,12 @@
+{
+  "country": "uzbekistan",
+  "data": {
+    "eco_data": {
+      "Temperate Grasslands, Savannas & Shrublands": 0.2533004488057041,
+      "Montane Grasslands & Shrublands": 0.0018304901578232115,
+      "Deserts & Xeric Shrublands": 0.7448690610364728
+    },
+    "adm0_code": 261,
+    "total_area": 448887290538.9311
+  }
+}

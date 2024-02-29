@@ -1,0 +1,11 @@
+{
+  "country": "switzerland",
+  "data": {
+    "eco_data": {
+      "Temperate Broadleaf & Mixed Forests": 0.4332229203307001,
+      "Temperate Conifer Forests": 0.5667770796693
+    },
+    "adm0_code": 237,
+    "total_area": 41148193532.0825
+  }
+}

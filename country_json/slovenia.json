@@ -1,0 +1,12 @@
+{
+  "country": "slovenia",
+  "data": {
+    "eco_data": {
+      "Temperate Broadleaf & Mixed Forests": 0.7404253519881053,
+      "Temperate Conifer Forests": 0.18677700181888218,
+      "Mediterranean Forests, Woodlands & Scrub": 0.07279764619301259
+    },
+    "adm0_code": 224,
+    "total_area": 20269978612.906338
+  }
+}

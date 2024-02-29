@@ -1,0 +1,15 @@
+{
+  "country": "ecuador",
+  "data": {
+    "eco_data": {
+      "Tropical & Subtropical Dry Broadleaf Forests": 0.09407590594114441,
+      "Flooded Grasslands & Savannas": 0.011444653641693983,
+      "Montane Grasslands & Shrublands": 0.061658236902862276,
+      "Deserts & Xeric Shrublands": 0.030451668237404646,
+      "Mangroves": 0.01956669198458645,
+      "Tropical & Subtropical Moist Broadleaf Forests": 0.7828028432923082
+    },
+    "adm0_code": 73,
+    "total_area": 257395213379.1572
+  }
+}

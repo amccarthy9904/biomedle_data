@@ -1,0 +1,12 @@
+{
+  "country": "canada",
+  "data": {
+    "eco_data": {
+      "Temperate Broadleaf & Mixed Forests": 0.2843593884885181,
+      "Boreal Forests/Taiga": 0.7124438003027035,
+      "Tundra": 0.0031968112087785
+    },
+    "adm0_code": 46,
+    "total_area": 1630433370919.021
+  }
+}

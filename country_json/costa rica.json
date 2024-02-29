@@ -1,0 +1,12 @@
+{
+  "country": "costa rica",
+  "data": {
+    "eco_data": {
+      "Tropical & Subtropical Dry Broadleaf Forests": 0.1203904824052127,
+      "Mangroves": 0.021464702707081798,
+      "Tropical & Subtropical Moist Broadleaf Forests": 0.8581448148877056
+    },
+    "adm0_code": 61,
+    "total_area": 51250722834.66249
+  }
+}

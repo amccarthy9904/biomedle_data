@@ -1,0 +1,12 @@
+{
+  "country": "c\u00f4te d'ivoire",
+  "data": {
+    "eco_data": {
+      "Mangroves": 0.0018915039279487288,
+      "Tropical & Subtropical Moist Broadleaf Forests": 0.46291232157715595,
+      "Tropical & Subtropical Grasslands, Savannas & Shrublands": 0.5351961744948953
+    },
+    "adm0_code": 66,
+    "total_area": 323128218106.46014
+  }
+}

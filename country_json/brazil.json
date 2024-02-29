@@ -1,0 +1,14 @@
+{
+  "country": "brazil",
+  "data": {
+    "eco_data": {
+      "Mangroves": 0.0029011344988887394,
+      "Tropical & Subtropical Dry Broadleaf Forests": 0.12425342410926399,
+      "Tropical & Subtropical Moist Broadleaf Forests": 0.6002830760709875,
+      "Tropical & Subtropical Grasslands, Savannas & Shrublands": 0.256482489225336,
+      "Flooded Grasslands & Savannas": 0.01607987609552369
+    },
+    "adm0_code": 37,
+    "total_area": 8518290854540.091
+  }
+}

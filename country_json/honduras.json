@@ -1,0 +1,14 @@
+{
+  "country": "honduras",
+  "data": {
+    "eco_data": {
+      "Tropical & Subtropical Dry Broadleaf Forests": 0.17019455286886268,
+      "Tropical & Subtropical Coniferous Forests": 0.3981282248856927,
+      "Mangroves": 0.02662659028910364,
+      "Tropical & Subtropical Moist Broadleaf Forests": 0.348944707794416,
+      "Tropical & Subtropical Grasslands, Savannas & Shrublands": 0.056105924161924996
+    },
+    "adm0_code": 111,
+    "total_area": 112529102497.76747
+  }
+}

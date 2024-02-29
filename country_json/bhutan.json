@@ -1,0 +1,16 @@
+{
+  "country": "bhutan",
+  "data": {
+    "eco_data": {
+      "N/A": 0.030462190308702328,
+      "Temperate Conifer Forests": 0.23237894181603833,
+      "Montane Grasslands & Shrublands": 0.17534598043402902,
+      "Temperate Broadleaf & Mixed Forests": 0.4257923662071379,
+      "Tropical & Subtropical Coniferous Forests": 0.017769829084201078,
+      "Tropical & Subtropical Moist Broadleaf Forests": 0.11600600852584396,
+      "Tropical & Subtropical Grasslands, Savannas & Shrublands": 0.0022446836240474365
+    },
+    "adm0_code": 31,
+    "total_area": 37735857320.460304
+  }
+}

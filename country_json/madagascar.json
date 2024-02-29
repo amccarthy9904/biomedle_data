@@ -1,0 +1,14 @@
+{
+  "country": "madagascar",
+  "data": {
+    "eco_data": {
+      "Mangroves": 0.007620902733143399,
+      "Deserts & Xeric Shrublands": 0.20824634806228165,
+      "Montane Grasslands & Shrublands": 0.0021673638659975725,
+      "Tropical & Subtropical Dry Broadleaf Forests": 0.25440317216823705,
+      "Tropical & Subtropical Moist Broadleaf Forests": 0.5275622131703404
+    },
+    "adm0_code": 150,
+    "total_area": 590590934402.5929
+  }
+}

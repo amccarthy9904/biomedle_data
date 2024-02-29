@@ -1,0 +1,12 @@
+{
+  "country": "saint lucia",
+  "data": {
+    "eco_data": {
+      "Tropical & Subtropical Dry Broadleaf Forests": 0.4168119318423599,
+      "Deserts & Xeric Shrublands": 0.03012721365967583,
+      "Tropical & Subtropical Moist Broadleaf Forests": 0.5530608544979643
+    },
+    "adm0_code": 209,
+    "total_area": 605039260.6952829
+  }
+}

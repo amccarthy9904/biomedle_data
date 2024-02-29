@@ -1,0 +1,12 @@
+{
+  "country": "turkmenistan",
+  "data": {
+    "eco_data": {
+      "Temperate Grasslands, Savannas & Shrublands": 0.007599421765554349,
+      "Montane Grasslands & Shrublands": 0.07182809471305808,
+      "Deserts & Xeric Shrublands": 0.9205724835213877
+    },
+    "adm0_code": 250,
+    "total_area": 554569004490.1421
+  }
+}

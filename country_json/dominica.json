@@ -1,0 +1,11 @@
+{
+  "country": "dominica",
+  "data": {
+    "eco_data": {
+      "Deserts & Xeric Shrublands": 0.19723950161165005,
+      "Tropical & Subtropical Moist Broadleaf Forests": 0.80276049838835
+    },
+    "adm0_code": 71,
+    "total_area": 753554163.8332177
+  }
+}

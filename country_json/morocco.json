@@ -1,0 +1,13 @@
+{
+  "country": "morocco",
+  "data": {
+    "eco_data": {
+      "Temperate Conifer Forests": 0.02645165021278376,
+      "Deserts & Xeric Shrublands": 0.2198565063388769,
+      "Montane Grasslands & Shrublands": 0.015290299271175114,
+      "Mediterranean Forests, Woodlands & Scrub": 0.7384015441771643
+    },
+    "adm0_code": 169,
+    "total_area": 414343208848.03595
+  }
+}

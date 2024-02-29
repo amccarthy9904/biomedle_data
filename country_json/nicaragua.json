@@ -1,0 +1,14 @@
+{
+  "country": "nicaragua",
+  "data": {
+    "eco_data": {
+      "Tropical & Subtropical Dry Broadleaf Forests": 0.20312482288163644,
+      "Tropical & Subtropical Coniferous Forests": 0.087454517173701,
+      "Mangroves": 0.034658538266605504,
+      "Tropical & Subtropical Moist Broadleaf Forests": 0.5748595419890723,
+      "Tropical & Subtropical Grasslands, Savannas & Shrublands": 0.09990257968898483
+    },
+    "adm0_code": 180,
+    "total_area": 128866230947.91599
+  }
+}

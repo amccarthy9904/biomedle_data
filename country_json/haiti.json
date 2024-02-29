@@ -1,0 +1,14 @@
+{
+  "country": "haiti",
+  "data": {
+    "eco_data": {
+      "Tropical & Subtropical Dry Broadleaf Forests": 0.21565610753864847,
+      "Tropical & Subtropical Coniferous Forests": 0.12134888484032715,
+      "Flooded Grasslands & Savannas": 0.007736497331867381,
+      "Mangroves": 0.02178552864498578,
+      "Tropical & Subtropical Moist Broadleaf Forests": 0.6334729816441712
+    },
+    "adm0_code": 108,
+    "total_area": 27104577632.926697
+  }
+}

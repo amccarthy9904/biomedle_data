@@ -1,0 +1,12 @@
+{
+  "country": "paraguay",
+  "data": {
+    "eco_data": {
+      "Tropical & Subtropical Moist Broadleaf Forests": 0.21508471328842463,
+      "Tropical & Subtropical Grasslands, Savannas & Shrublands": 0.7796294502213994,
+      "Flooded Grasslands & Savannas": 0.005285836490176034
+    },
+    "adm0_code": 194,
+    "total_area": 400321369791.77094
+  }
+}

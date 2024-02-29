@@ -1,0 +1,13 @@
+{
+  "country": "somalia",
+  "data": {
+    "eco_data": {
+      "Mangroves": 0.0018676225151807143,
+      "Deserts & Xeric Shrublands": 0.14086943860400933,
+      "Tropical & Subtropical Grasslands, Savannas & Shrublands": 0.7506376320305651,
+      "Tropical & Subtropical Moist Broadleaf Forests": 0.1066253068502449
+    },
+    "adm0_code": 226,
+    "total_area": 635275150862.0481
+  }
+}

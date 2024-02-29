@@ -1,0 +1,13 @@
+{
+  "country": "malawi",
+  "data": {
+    "eco_data": {
+      "Flooded Grasslands & Savannas": 0.03459792246846382,
+      "Montane Grasslands & Shrublands": 0.04161085173670125,
+      "Tropical & Subtropical Moist Broadleaf Forests": 0.00039164952246229504,
+      "Tropical & Subtropical Grasslands, Savannas & Shrublands": 0.9233995762723727
+    },
+    "adm0_code": 152,
+    "total_area": 119163803869.55513
+  }
+}

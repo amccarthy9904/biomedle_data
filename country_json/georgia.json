@@ -1,0 +1,12 @@
+{
+  "country": "georgia",
+  "data": {
+    "eco_data": {
+      "Temperate Broadleaf & Mixed Forests": 0.8231079190219195,
+      "Temperate Grasslands, Savannas & Shrublands": 0.0776673778052349,
+      "Deserts & Xeric Shrublands": 0.09922470317284564
+    },
+    "adm0_code": 92,
+    "total_area": 69676037399.50552
+  }
+}

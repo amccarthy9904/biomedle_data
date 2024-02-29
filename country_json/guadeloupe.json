@@ -1,0 +1,12 @@
+{
+  "country": "guadeloupe",
+  "data": {
+    "eco_data": {
+      "Deserts & Xeric Shrublands": 0.4668996970956399,
+      "Mangroves": 0.11117058732120548,
+      "Tropical & Subtropical Moist Broadleaf Forests": 0.42192971558315456
+    },
+    "adm0_code": 100,
+    "total_area": 1702515096.104584
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "country": "guatemala",
+  "data": {
+    "eco_data": {
+      "Tropical & Subtropical Dry Broadleaf Forests": 0.06885517148333876,
+      "Tropical & Subtropical Coniferous Forests": 0.26957508665221,
+      "Deserts & Xeric Shrublands": 0.02136339592552493,
+      "Mangroves": 0.013539675248654431,
+      "Tropical & Subtropical Moist Broadleaf Forests": 0.6266666706902717
+    },
+    "adm0_code": 103,
+    "total_area": 109442361825.03778
+  }
+}

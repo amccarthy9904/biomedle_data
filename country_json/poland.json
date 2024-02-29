@@ -1,0 +1,11 @@
+{
+  "country": "poland",
+  "data": {
+    "eco_data": {
+      "Temperate Broadleaf & Mixed Forests": 0.9380978716636885,
+      "Temperate Conifer Forests": 0.06190212833631149
+    },
+    "adm0_code": 198,
+    "total_area": 310755838081.4802
+  }
+}

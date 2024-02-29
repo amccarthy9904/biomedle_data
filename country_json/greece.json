@@ -1,0 +1,11 @@
+{
+  "country": "greece",
+  "data": {
+    "eco_data": {
+      "Mediterranean Forests, Woodlands & Scrub": 0.9016387539666019,
+      "Temperate Broadleaf & Mixed Forests": 0.098361246033398
+    },
+    "adm0_code": 97,
+    "total_area": 132438488069.13182
+  }
+}

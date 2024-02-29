@@ -1,0 +1,11 @@
+{
+  "country": "austria",
+  "data": {
+    "eco_data": {
+      "Temperate Broadleaf & Mixed Forests": 0.4209712026687456,
+      "Temperate Conifer Forests": 0.5790287973312543
+    },
+    "adm0_code": 18,
+    "total_area": 83726975503.07852
+  }
+}

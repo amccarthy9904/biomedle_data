@@ -1,0 +1,12 @@
+{
+  "country": "sierra leone",
+  "data": {
+    "eco_data": {
+      "Mangroves": 0.09365447372691182,
+      "Tropical & Subtropical Moist Broadleaf Forests": 0.6474036087765819,
+      "Tropical & Subtropical Grasslands, Savannas & Shrublands": 0.25894191749650625
+    },
+    "adm0_code": 221,
+    "total_area": 72584269521.12572
+  }
+}

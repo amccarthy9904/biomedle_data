@@ -1,0 +1,11 @@
+{
+  "country": "serbia",
+  "data": {
+    "eco_data": {
+      "Mediterranean Forests, Woodlands & Scrub": 0.002503466156175039,
+      "Temperate Broadleaf & Mixed Forests": 0.997496533843825
+    },
+    "adm0_code": 2648,
+    "total_area": 88301660677.04922
+  }
+}

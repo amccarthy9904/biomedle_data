@@ -1,0 +1,13 @@
+{
+  "country": "papua new guinea",
+  "data": {
+    "eco_data": {
+      "Tropical & Subtropical Grasslands, Savannas & Shrublands": 0.039468805069741916,
+      "Montane Grasslands & Shrublands": 0.012609156240184854,
+      "Mangroves": 0.011218753640372281,
+      "Tropical & Subtropical Moist Broadleaf Forests": 0.9367032850497009
+    },
+    "adm0_code": 192,
+    "total_area": 464219947058.70953
+  }
+}

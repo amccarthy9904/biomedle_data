@@ -1,0 +1,12 @@
+{
+  "country": "niger",
+  "data": {
+    "eco_data": {
+      "Deserts & Xeric Shrublands": 0.4442091623472393,
+      "Flooded Grasslands & Savannas": 0.003423704100321257,
+      "Tropical & Subtropical Grasslands, Savannas & Shrublands": 0.5523671335524394
+    },
+    "adm0_code": 181,
+    "total_area": 1186402483740.6829
+  }
+}

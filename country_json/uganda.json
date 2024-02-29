@@ -1,0 +1,12 @@
+{
+  "country": "uganda",
+  "data": {
+    "eco_data": {
+      "Montane Grasslands & Shrublands": 0.0029801264344646223,
+      "Tropical & Subtropical Moist Broadleaf Forests": 0.14963013849073556,
+      "Tropical & Subtropical Grasslands, Savannas & Shrublands": 0.8473897350747998
+    },
+    "adm0_code": 253,
+    "total_area": 242576001458.7627
+  }
+}

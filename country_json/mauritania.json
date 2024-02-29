@@ -1,0 +1,12 @@
+{
+  "country": "mauritania",
+  "data": {
+    "eco_data": {
+      "Deserts & Xeric Shrublands": 0.5381270115590998,
+      "Flooded Grasslands & Savannas": 0.005357502293695288,
+      "Tropical & Subtropical Grasslands, Savannas & Shrublands": 0.45651548614720494
+    },
+    "adm0_code": 159,
+    "total_area": 1041491966937.4147
+  }
+}

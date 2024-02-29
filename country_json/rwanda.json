@@ -1,0 +1,12 @@
+{
+  "country": "rwanda",
+  "data": {
+    "eco_data": {
+      "Montane Grasslands & Shrublands": 0.003769565539502346,
+      "Tropical & Subtropical Moist Broadleaf Forests": 0.551826556297695,
+      "Tropical & Subtropical Grasslands, Savannas & Shrublands": 0.4444038781628027
+    },
+    "adm0_code": 205,
+    "total_area": 25502040052.894196
+  }
+}

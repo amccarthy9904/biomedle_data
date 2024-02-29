@@ -1,0 +1,12 @@
+{
+  "country": "finland",
+  "data": {
+    "eco_data": {
+      "Temperate Broadleaf & Mixed Forests": 0.013070155665443423,
+      "Boreal Forests/Taiga": 0.9753872362364842,
+      "Tundra": 0.01154260809807245
+    },
+    "adm0_code": 84,
+    "total_area": 334744812698.4447
+  }
+}

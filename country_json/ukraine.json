@@ -1,0 +1,12 @@
+{
+  "country": "ukraine",
+  "data": {
+    "eco_data": {
+      "Temperate Broadleaf & Mixed Forests": 0.5402569251526257,
+      "Temperate Conifer Forests": 0.05599482151440746,
+      "Temperate Grasslands, Savannas & Shrublands": 0.40374825333296677
+    },
+    "adm0_code": 254,
+    "total_area": 598637506463.6848
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "country": "syrian arab republic",
+  "data": {
+    "eco_data": {
+      "Mediterranean Forests, Woodlands & Scrub": 0.27452758253810605,
+      "Temperate Grasslands, Savannas & Shrublands": 0.43502586769997287,
+      "Deserts & Xeric Shrublands": 0.29044654976192097
+    },
+    "adm0_code": 238,
+    "total_area": 188151718907.9204
+  }
+}

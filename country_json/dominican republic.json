@@ -1,0 +1,14 @@
+{
+  "country": "dominican republic",
+  "data": {
+    "eco_data": {
+      "Tropical & Subtropical Dry Broadleaf Forests": 0.19863870363609729,
+      "Tropical & Subtropical Coniferous Forests": 0.1731176403882332,
+      "Flooded Grasslands & Savannas": 0.008733374120850547,
+      "Mangroves": 0.023356980567032327,
+      "Tropical & Subtropical Moist Broadleaf Forests": 0.5961533012877867
+    },
+    "adm0_code": 72,
+    "total_area": 48246661914.251335
+  }
+}

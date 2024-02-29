@@ -1,0 +1,12 @@
+{
+  "country": "puerto rico",
+  "data": {
+    "eco_data": {
+      "Tropical & Subtropical Dry Broadleaf Forests": 0.13756923823043207,
+      "Mangroves": 0.023287744370170158,
+      "Tropical & Subtropical Moist Broadleaf Forests": 0.8391430173993978
+    },
+    "adm0_code": 200,
+    "total_area": 8965743121.978466
+  }
+}

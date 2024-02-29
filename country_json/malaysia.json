@@ -1,0 +1,12 @@
+{
+  "country": "malaysia",
+  "data": {
+    "eco_data": {
+      "Mangroves": 0.025056963193509762,
+      "Montane Grasslands & Shrublands": 0.0018193259880028366,
+      "Tropical & Subtropical Moist Broadleaf Forests": 0.9731237108184874
+    },
+    "adm0_code": 153,
+    "total_area": 331233859834.18866
+  }
+}

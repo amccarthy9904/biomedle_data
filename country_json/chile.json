@@ -1,0 +1,16 @@
+{
+  "country": "chile",
+  "data": {
+    "eco_data": {
+      "N/A": 0.020819361943842523,
+      "Temperate Broadleaf & Mixed Forests": 0.4385120284779346,
+      "Temperate Grasslands, Savannas & Shrublands": 0.038434534216205886,
+      "Montane Grasslands & Shrublands": 0.1554164391355013,
+      "Mediterranean Forests, Woodlands & Scrub": 0.20156823834875523,
+      "Deserts & Xeric Shrublands": 0.14503297432442208,
+      "Tropical & Subtropical Moist Broadleaf Forests": 0.00021642355333826956
+    },
+    "adm0_code": 51,
+    "total_area": 753125648926.8367
+  }
+}

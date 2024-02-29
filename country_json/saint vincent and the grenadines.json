@@ -1,0 +1,13 @@
+{
+  "country": "saint vincent and the grenadines",
+  "data": {
+    "eco_data": {
+      "Tropical & Subtropical Dry Broadleaf Forests": 0.12392760739726064,
+      "Deserts & Xeric Shrublands": 0.09324496185628457,
+      "Mangroves": 0.33247840921057453,
+      "Tropical & Subtropical Moist Broadleaf Forests": 0.45034902153588025
+    },
+    "adm0_code": 211,
+    "total_area": 428283065.1311006
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "country": "gabon",
+  "data": {
+    "eco_data": {
+      "Mangroves": 0.017561546703647225,
+      "Tropical & Subtropical Moist Broadleaf Forests": 0.8059950573261409,
+      "Tropical & Subtropical Grasslands, Savannas & Shrublands": 0.176443395970212
+    },
+    "adm0_code": 89,
+    "total_area": 265205397275.8315
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "country": "yemen",
+  "data": {
+    "eco_data": {
+      "Tropical & Subtropical Grasslands, Savannas & Shrublands": 0.06632715204341644,
+      "Deserts & Xeric Shrublands": 0.9336551523008587,
+      "Mangroves": 1.7695655725018215e-05
+    },
+    "adm0_code": 269,
+    "total_area": 455147951115.17456
+  }
+}

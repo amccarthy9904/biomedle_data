@@ -1,0 +1,12 @@
+{
+  "country": "guinea",
+  "data": {
+    "eco_data": {
+      "Mangroves": 0.00902222745225244,
+      "Tropical & Subtropical Moist Broadleaf Forests": 0.1939000093003138,
+      "Tropical & Subtropical Grasslands, Savannas & Shrublands": 0.7970777632474337
+    },
+    "adm0_code": 106,
+    "total_area": 244005620717.3036
+  }
+}

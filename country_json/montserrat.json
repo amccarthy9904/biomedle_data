@@ -1,0 +1,12 @@
+{
+  "country": "montserrat",
+  "data": {
+    "eco_data": {
+      "Tropical & Subtropical Dry Broadleaf Forests": 0.47389228502878467,
+      "Deserts & Xeric Shrublands": 0.20378701146453979,
+      "Tropical & Subtropical Moist Broadleaf Forests": 0.3223207035066755
+    },
+    "adm0_code": 168,
+    "total_area": 101562061.89782982
+  }
+}
